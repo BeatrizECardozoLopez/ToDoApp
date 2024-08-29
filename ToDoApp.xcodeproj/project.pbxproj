@@ -12,6 +12,22 @@
 		FB8082602C8003F800BA8D4E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80825F2C8003F800BA8D4E /* Item.swift */; };
 		FB8082622C8003FB00BA8D4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB8082612C8003FB00BA8D4E /* Assets.xcassets */; };
 		FB8082652C8003FB00BA8D4E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB8082642C8003FB00BA8D4E /* Preview Assets.xcassets */; };
+		FB8082722C80048800BA8D4E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8082712C80048800BA8D4E /* Task.swift */; };
+		FB8082762C8004B200BA8D4E /* TaskGroupTilesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8082732C8004B100BA8D4E /* TaskGroupTilesView.swift */; };
+		FB8082772C8004B200BA8D4E /* ProgressCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8082742C8004B200BA8D4E /* ProgressCardView.swift */; };
+		FB8082782C8004B200BA8D4E /* HomeBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8082752C8004B200BA8D4E /* HomeBoardView.swift */; };
+		FB8082822C8004BF00BA8D4E /* Mulish-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB8082792C8004BF00BA8D4E /* Mulish-Black.ttf */; };
+		FB8082832C8004BF00BA8D4E /* Mulish-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB80827A2C8004BF00BA8D4E /* Mulish-Bold.ttf */; };
+		FB8082842C8004BF00BA8D4E /* Mulish-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB80827B2C8004BF00BA8D4E /* Mulish-ExtraBold.ttf */; };
+		FB8082852C8004BF00BA8D4E /* Mulish-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB80827C2C8004BF00BA8D4E /* Mulish-ExtraLight.ttf */; };
+		FB8082862C8004BF00BA8D4E /* Mulish-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB80827D2C8004BF00BA8D4E /* Mulish-Light.ttf */; };
+		FB8082872C8004BF00BA8D4E /* Mulish-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB80827E2C8004BF00BA8D4E /* Mulish-Medium.ttf */; };
+		FB8082882C8004BF00BA8D4E /* Mulish-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB80827F2C8004BF00BA8D4E /* Mulish-Regular.ttf */; };
+		FB8082892C8004BF00BA8D4E /* Mulish-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB8082802C8004BF00BA8D4E /* Mulish-SemiBold.ttf */; };
+		FB80828E2C8004DC00BA8D4E /* AddProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80828A2C8004DC00BA8D4E /* AddProjectView.swift */; };
+		FB80828F2C8004DC00BA8D4E /* TodayTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80828B2C8004DC00BA8D4E /* TodayTasksView.swift */; };
+		FB8082902C8004DC00BA8D4E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80828C2C8004DC00BA8D4E /* HomeView.swift */; };
+		FB8082912C8004DC00BA8D4E /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80828D2C8004DC00BA8D4E /* StartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +37,23 @@
 		FB80825F2C8003F800BA8D4E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		FB8082612C8003FB00BA8D4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB8082642C8003FB00BA8D4E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FB8082712C80048800BA8D4E /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		FB8082732C8004B100BA8D4E /* TaskGroupTilesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskGroupTilesView.swift; sourceTree = "<group>"; };
+		FB8082742C8004B200BA8D4E /* ProgressCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressCardView.swift; sourceTree = "<group>"; };
+		FB8082752C8004B200BA8D4E /* HomeBoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeBoardView.swift; sourceTree = "<group>"; };
+		FB8082792C8004BF00BA8D4E /* Mulish-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Black.ttf"; sourceTree = "<group>"; };
+		FB80827A2C8004BF00BA8D4E /* Mulish-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Bold.ttf"; sourceTree = "<group>"; };
+		FB80827B2C8004BF00BA8D4E /* Mulish-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-ExtraBold.ttf"; sourceTree = "<group>"; };
+		FB80827C2C8004BF00BA8D4E /* Mulish-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-ExtraLight.ttf"; sourceTree = "<group>"; };
+		FB80827D2C8004BF00BA8D4E /* Mulish-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Light.ttf"; sourceTree = "<group>"; };
+		FB80827E2C8004BF00BA8D4E /* Mulish-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Medium.ttf"; sourceTree = "<group>"; };
+		FB80827F2C8004BF00BA8D4E /* Mulish-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Regular.ttf"; sourceTree = "<group>"; };
+		FB8082802C8004BF00BA8D4E /* Mulish-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-SemiBold.ttf"; sourceTree = "<group>"; };
+		FB80828A2C8004DC00BA8D4E /* AddProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProjectView.swift; sourceTree = "<group>"; };
+		FB80828B2C8004DC00BA8D4E /* TodayTasksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTasksView.swift; sourceTree = "<group>"; };
+		FB80828C2C8004DC00BA8D4E /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		FB80828D2C8004DC00BA8D4E /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		FB8082922C8004EB00BA8D4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,9 +86,12 @@
 		FB80825A2C8003F800BA8D4E /* ToDoApp */ = {
 			isa = PBXGroup;
 			children = (
-				FB80825B2C8003F800BA8D4E /* ToDoAppApp.swift */,
-				FB80825D2C8003F800BA8D4E /* ContentView.swift */,
-				FB80825F2C8003F800BA8D4E /* Item.swift */,
+				FB8082922C8004EB00BA8D4E /* Info.plist */,
+				FB8082812C8004BF00BA8D4E /* Font */,
+				FB8082702C80047400BA8D4E /* Model */,
+				FB80826D2C80045100BA8D4E /* Core */,
+				FB80826C2C80043F00BA8D4E /* Components */,
+				FB80826B2C80043300BA8D4E /* App */,
 				FB8082612C8003FB00BA8D4E /* Assets.xcassets */,
 				FB8082632C8003FB00BA8D4E /* Preview Content */,
 			);
@@ -68,6 +104,76 @@
 				FB8082642C8003FB00BA8D4E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FB80826B2C80043300BA8D4E /* App */ = {
+			isa = PBXGroup;
+			children = (
+				FB80825B2C8003F800BA8D4E /* ToDoAppApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FB80826C2C80043F00BA8D4E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FB8082752C8004B200BA8D4E /* HomeBoardView.swift */,
+				FB8082742C8004B200BA8D4E /* ProgressCardView.swift */,
+				FB8082732C8004B100BA8D4E /* TaskGroupTilesView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		FB80826D2C80045100BA8D4E /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FB80826F2C80046900BA8D4E /* View */,
+				FB80826E2C80046300BA8D4E /* Root */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		FB80826E2C80046300BA8D4E /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				FB80825D2C8003F800BA8D4E /* ContentView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		FB80826F2C80046900BA8D4E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FB80828A2C8004DC00BA8D4E /* AddProjectView.swift */,
+				FB80828C2C8004DC00BA8D4E /* HomeView.swift */,
+				FB80828D2C8004DC00BA8D4E /* StartView.swift */,
+				FB80828B2C8004DC00BA8D4E /* TodayTasksView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FB8082702C80047400BA8D4E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FB80825F2C8003F800BA8D4E /* Item.swift */,
+				FB8082712C80048800BA8D4E /* Task.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FB8082812C8004BF00BA8D4E /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				FB8082792C8004BF00BA8D4E /* Mulish-Black.ttf */,
+				FB80827A2C8004BF00BA8D4E /* Mulish-Bold.ttf */,
+				FB80827B2C8004BF00BA8D4E /* Mulish-ExtraBold.ttf */,
+				FB80827C2C8004BF00BA8D4E /* Mulish-ExtraLight.ttf */,
+				FB80827D2C8004BF00BA8D4E /* Mulish-Light.ttf */,
+				FB80827E2C8004BF00BA8D4E /* Mulish-Medium.ttf */,
+				FB80827F2C8004BF00BA8D4E /* Mulish-Regular.ttf */,
+				FB8082802C8004BF00BA8D4E /* Mulish-SemiBold.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,8 +234,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB8082852C8004BF00BA8D4E /* Mulish-ExtraLight.ttf in Resources */,
+				FB8082862C8004BF00BA8D4E /* Mulish-Light.ttf in Resources */,
+				FB8082842C8004BF00BA8D4E /* Mulish-ExtraBold.ttf in Resources */,
 				FB8082652C8003FB00BA8D4E /* Preview Assets.xcassets in Resources */,
+				FB8082822C8004BF00BA8D4E /* Mulish-Black.ttf in Resources */,
+				FB8082872C8004BF00BA8D4E /* Mulish-Medium.ttf in Resources */,
+				FB8082882C8004BF00BA8D4E /* Mulish-Regular.ttf in Resources */,
 				FB8082622C8003FB00BA8D4E /* Assets.xcassets in Resources */,
+				FB8082832C8004BF00BA8D4E /* Mulish-Bold.ttf in Resources */,
+				FB8082892C8004BF00BA8D4E /* Mulish-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,9 +254,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB8082722C80048800BA8D4E /* Task.swift in Sources */,
+				FB8082912C8004DC00BA8D4E /* StartView.swift in Sources */,
+				FB8082762C8004B200BA8D4E /* TaskGroupTilesView.swift in Sources */,
+				FB80828F2C8004DC00BA8D4E /* TodayTasksView.swift in Sources */,
+				FB8082902C8004DC00BA8D4E /* HomeView.swift in Sources */,
+				FB80828E2C8004DC00BA8D4E /* AddProjectView.swift in Sources */,
 				FB80825E2C8003F800BA8D4E /* ContentView.swift in Sources */,
+				FB8082772C8004B200BA8D4E /* ProgressCardView.swift in Sources */,
 				FB8082602C8003F800BA8D4E /* Item.swift in Sources */,
 				FB80825C2C8003F800BA8D4E /* ToDoAppApp.swift in Sources */,
+				FB8082782C8004B200BA8D4E /* HomeBoardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +401,7 @@
 				DEVELOPMENT_TEAM = 9V8AJZ9366;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ToDoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -308,6 +431,7 @@
 				DEVELOPMENT_TEAM = 9V8AJZ9366;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ToDoApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
