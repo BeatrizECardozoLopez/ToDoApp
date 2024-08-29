@@ -21,6 +21,7 @@ struct NewTaskView: View {
     var body: some View {
         
         VStack {
+            NewTaskBar()
             TaskGroupPickerView(selectedCategory: self.$selectedCategory)
             
             PriorityPickerView(selectedPriority: self.$selectedPriority)
@@ -29,10 +30,36 @@ struct NewTaskView: View {
             
             TextFieldView(title: "Description", isMultiLine: true)
             
+            Button{
+                //TODO: Create new task
+            } label: {
+                Text("Create")
+                    .font(.custom(boldFont, size: 16))
+                    .foregroundStyle(.primary)
+            }
+            .frame(width: 150)
+            .foregroundColor(.white)
+            .padding()
+            .background(Color("PrimaryColor"))
+            .cornerRadius(15)
+            .padding(.horizontal, 20)
+            .padding(.vertical, 24)
             Spacer()
-            
         }
+    }
+}
+
+struct NewTaskBar: View {
+    var body: some View {
         
+        HStack {
+            Spacer()
+            Text("Add Task")
+                .font(.custom(boldFont, size: 26))
+                .foregroundStyle(.primary)
+            Spacer()
+        }
+        .padding()
     }
 }
 
