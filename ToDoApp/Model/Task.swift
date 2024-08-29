@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum Priority: Int{
+enum Priority: Int, CaseIterable{
     case low = 1
     case normal = 2
     case high = 3

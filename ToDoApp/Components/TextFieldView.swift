@@ -22,7 +22,7 @@ struct TextFieldView: View {
                
               if isMultiLine {
                   TextField("", text: self.$data, axis: .vertical)
-                      .font(.custom(boldFont, size: 18))
+                      .font(.custom(boldFont, size: 16))
                       .foregroundStyle(.primary)
                       .lineLimit(3...5)
               } else {
@@ -35,7 +35,7 @@ struct TextFieldView: View {
         .padding()
         .background(.white)
         .cornerRadius(20)
-        .frame(width: UIScreen.main.bounds.width - 50, height: 150)
+        .frame(width: UIScreen.main.bounds.width - 50)
         .shadow(color: Color.gray.opacity(0.3), radius: 10, x: 0, y: 2)
         .padding(.vertical, 12)
     }
