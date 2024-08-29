@@ -27,6 +27,7 @@
 		FB80828F2C8004DC00BA8D4E /* PendingTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80828B2C8004DC00BA8D4E /* PendingTasksView.swift */; };
 		FB8082902C8004DC00BA8D4E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80828C2C8004DC00BA8D4E /* HomeView.swift */; };
 		FB8082912C8004DC00BA8D4E /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80828D2C8004DC00BA8D4E /* StartView.swift */; };
+		FB8082942C800F1400BA8D4E /* PendingTaskTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8082932C800F1400BA8D4E /* PendingTaskTileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		FB80828C2C8004DC00BA8D4E /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FB80828D2C8004DC00BA8D4E /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		FB8082922C8004EB00BA8D4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FB8082932C800F1400BA8D4E /* PendingTaskTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingTaskTileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				FB8082752C8004B200BA8D4E /* HomeBoardView.swift */,
 				FB8082742C8004B200BA8D4E /* ProgressCardView.swift */,
 				FB8082732C8004B100BA8D4E /* TaskGroupTilesView.swift */,
+				FB8082932C800F1400BA8D4E /* PendingTaskTileView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 			files = (
 				FB8082722C80048800BA8D4E /* Task.swift in Sources */,
 				FB8082912C8004DC00BA8D4E /* StartView.swift in Sources */,
+				FB8082942C800F1400BA8D4E /* PendingTaskTileView.swift in Sources */,
 				FB8082762C8004B200BA8D4E /* TaskGroupTilesView.swift in Sources */,
 				FB80828F2C8004DC00BA8D4E /* PendingTasksView.swift in Sources */,
 				FB8082902C8004DC00BA8D4E /* HomeView.swift in Sources */,

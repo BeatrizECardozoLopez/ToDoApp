@@ -25,8 +25,8 @@ struct PendingTasksView: View {
             VStack {
                 HStack{
                     Text("Today's Tasks")
-                        .font(.system(size: 30, design: .rounded))
-                        .fontWeight(.black)
+                        .font(.custom(boldFont, size: 30))
+                        .foregroundStyle(.primary)
                     
                     Spacer()
                     
@@ -42,8 +42,9 @@ struct PendingTasksView: View {
                 
                 List{
                     ForEach(self.tasks){ task in
-                        //TODO: TaskTile
+                        PendingTaskTileView(task: task)
                     }
+                    .listRowSeparator(.hidden)
                 }
                 .listStyle(.plain)
                 .rotation3DEffect(
@@ -55,17 +56,36 @@ struct PendingTasksView: View {
                 }
                 
                 if self.tasks.count == 0 {
-                    //TODO: Create an empty view "No tasks for today"
+                    NoTasksView()
+                    Spacer()
                 }
                 
                 if self.showNewTask {
                     //TODO: Create form to create new task
                 }
+                
+                
             }
             
             
         }
         
+    }
+}
+
+//MARK: No Tasks View
+struct NoTasksView: View {
+    var body: some View {
+        VStack{
+            Text("You've no tasks for today!")
+                .font(.custom(boldFont, size: 16))
+                .foregroundStyle(.secondary)
+                .padding()
+            Image("NoTasksImage")
+                .resizable()
+                .scaledToFill()
+            Spacer()
+        }
     }
 }
 
