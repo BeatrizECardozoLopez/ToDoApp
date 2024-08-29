@@ -23,11 +23,13 @@
 		FB8082872C8004BF00BA8D4E /* Mulish-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB80827E2C8004BF00BA8D4E /* Mulish-Medium.ttf */; };
 		FB8082882C8004BF00BA8D4E /* Mulish-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB80827F2C8004BF00BA8D4E /* Mulish-Regular.ttf */; };
 		FB8082892C8004BF00BA8D4E /* Mulish-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB8082802C8004BF00BA8D4E /* Mulish-SemiBold.ttf */; };
-		FB80828E2C8004DC00BA8D4E /* AddProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80828A2C8004DC00BA8D4E /* AddProjectView.swift */; };
+		FB80828E2C8004DC00BA8D4E /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80828A2C8004DC00BA8D4E /* NewTaskView.swift */; };
 		FB80828F2C8004DC00BA8D4E /* PendingTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80828B2C8004DC00BA8D4E /* PendingTasksView.swift */; };
 		FB8082902C8004DC00BA8D4E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80828C2C8004DC00BA8D4E /* HomeView.swift */; };
 		FB8082912C8004DC00BA8D4E /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80828D2C8004DC00BA8D4E /* StartView.swift */; };
 		FB8082942C800F1400BA8D4E /* PendingTaskTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8082932C800F1400BA8D4E /* PendingTaskTileView.swift */; };
+		FB8082962C80298100BA8D4E /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8082952C80298100BA8D4E /* TextFieldView.swift */; };
+		FB8082982C80304C00BA8D4E /* CustomizedPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8082972C80304C00BA8D4E /* CustomizedPickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,12 +50,14 @@
 		FB80827E2C8004BF00BA8D4E /* Mulish-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Medium.ttf"; sourceTree = "<group>"; };
 		FB80827F2C8004BF00BA8D4E /* Mulish-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Regular.ttf"; sourceTree = "<group>"; };
 		FB8082802C8004BF00BA8D4E /* Mulish-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-SemiBold.ttf"; sourceTree = "<group>"; };
-		FB80828A2C8004DC00BA8D4E /* AddProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProjectView.swift; sourceTree = "<group>"; };
+		FB80828A2C8004DC00BA8D4E /* NewTaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 		FB80828B2C8004DC00BA8D4E /* PendingTasksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingTasksView.swift; sourceTree = "<group>"; };
 		FB80828C2C8004DC00BA8D4E /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FB80828D2C8004DC00BA8D4E /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		FB8082922C8004EB00BA8D4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FB8082932C800F1400BA8D4E /* PendingTaskTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingTaskTileView.swift; sourceTree = "<group>"; };
+		FB8082952C80298100BA8D4E /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		FB8082972C80304C00BA8D4E /* CustomizedPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +125,8 @@
 				FB8082742C8004B200BA8D4E /* ProgressCardView.swift */,
 				FB8082732C8004B100BA8D4E /* TaskGroupTilesView.swift */,
 				FB8082932C800F1400BA8D4E /* PendingTaskTileView.swift */,
+				FB8082952C80298100BA8D4E /* TextFieldView.swift */,
+				FB8082972C80304C00BA8D4E /* CustomizedPickerView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -145,7 +151,7 @@
 		FB80826F2C80046900BA8D4E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FB80828A2C8004DC00BA8D4E /* AddProjectView.swift */,
+				FB80828A2C8004DC00BA8D4E /* NewTaskView.swift */,
 				FB80828C2C8004DC00BA8D4E /* HomeView.swift */,
 				FB80828D2C8004DC00BA8D4E /* StartView.swift */,
 				FB80828B2C8004DC00BA8D4E /* PendingTasksView.swift */,
@@ -256,11 +262,13 @@
 			files = (
 				FB8082722C80048800BA8D4E /* Task.swift in Sources */,
 				FB8082912C8004DC00BA8D4E /* StartView.swift in Sources */,
+				FB8082962C80298100BA8D4E /* TextFieldView.swift in Sources */,
 				FB8082942C800F1400BA8D4E /* PendingTaskTileView.swift in Sources */,
 				FB8082762C8004B200BA8D4E /* TaskGroupTilesView.swift in Sources */,
 				FB80828F2C8004DC00BA8D4E /* PendingTasksView.swift in Sources */,
+				FB8082982C80304C00BA8D4E /* CustomizedPickerView.swift in Sources */,
 				FB8082902C8004DC00BA8D4E /* HomeView.swift in Sources */,
-				FB80828E2C8004DC00BA8D4E /* AddProjectView.swift in Sources */,
+				FB80828E2C8004DC00BA8D4E /* NewTaskView.swift in Sources */,
 				FB80825E2C8003F800BA8D4E /* ContentView.swift in Sources */,
 				FB8082772C8004B200BA8D4E /* ProgressCardView.swift in Sources */,
 				FB80825C2C8003F800BA8D4E /* ToDoAppApp.swift in Sources */,

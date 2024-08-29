@@ -47,7 +47,7 @@ enum Priority: Int{
     }
 }
 
-enum Category: Int{
+enum Category: Int, CaseIterable{
     case office = 1
     case personal = 2
     case study = 3
