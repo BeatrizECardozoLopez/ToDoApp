@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		FB80825C2C8003F800BA8D4E /* ToDoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80825B2C8003F800BA8D4E /* ToDoAppApp.swift */; };
 		FB80825E2C8003F800BA8D4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80825D2C8003F800BA8D4E /* ContentView.swift */; };
-		FB8082602C8003F800BA8D4E /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80825F2C8003F800BA8D4E /* Item.swift */; };
 		FB8082622C8003FB00BA8D4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB8082612C8003FB00BA8D4E /* Assets.xcassets */; };
 		FB8082652C8003FB00BA8D4E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB8082642C8003FB00BA8D4E /* Preview Assets.xcassets */; };
 		FB8082722C80048800BA8D4E /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8082712C80048800BA8D4E /* Task.swift */; };
@@ -25,7 +24,7 @@
 		FB8082882C8004BF00BA8D4E /* Mulish-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB80827F2C8004BF00BA8D4E /* Mulish-Regular.ttf */; };
 		FB8082892C8004BF00BA8D4E /* Mulish-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FB8082802C8004BF00BA8D4E /* Mulish-SemiBold.ttf */; };
 		FB80828E2C8004DC00BA8D4E /* AddProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80828A2C8004DC00BA8D4E /* AddProjectView.swift */; };
-		FB80828F2C8004DC00BA8D4E /* TodayTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80828B2C8004DC00BA8D4E /* TodayTasksView.swift */; };
+		FB80828F2C8004DC00BA8D4E /* PendingTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80828B2C8004DC00BA8D4E /* PendingTasksView.swift */; };
 		FB8082902C8004DC00BA8D4E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80828C2C8004DC00BA8D4E /* HomeView.swift */; };
 		FB8082912C8004DC00BA8D4E /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80828D2C8004DC00BA8D4E /* StartView.swift */; };
 /* End PBXBuildFile section */
@@ -34,7 +33,6 @@
 		FB8082582C8003F800BA8D4E /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB80825B2C8003F800BA8D4E /* ToDoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoAppApp.swift; sourceTree = "<group>"; };
 		FB80825D2C8003F800BA8D4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		FB80825F2C8003F800BA8D4E /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		FB8082612C8003FB00BA8D4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB8082642C8003FB00BA8D4E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FB8082712C80048800BA8D4E /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
@@ -50,7 +48,7 @@
 		FB80827F2C8004BF00BA8D4E /* Mulish-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-Regular.ttf"; sourceTree = "<group>"; };
 		FB8082802C8004BF00BA8D4E /* Mulish-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Mulish-SemiBold.ttf"; sourceTree = "<group>"; };
 		FB80828A2C8004DC00BA8D4E /* AddProjectView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProjectView.swift; sourceTree = "<group>"; };
-		FB80828B2C8004DC00BA8D4E /* TodayTasksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayTasksView.swift; sourceTree = "<group>"; };
+		FB80828B2C8004DC00BA8D4E /* PendingTasksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingTasksView.swift; sourceTree = "<group>"; };
 		FB80828C2C8004DC00BA8D4E /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		FB80828D2C8004DC00BA8D4E /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		FB8082922C8004EB00BA8D4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -147,7 +145,7 @@
 				FB80828A2C8004DC00BA8D4E /* AddProjectView.swift */,
 				FB80828C2C8004DC00BA8D4E /* HomeView.swift */,
 				FB80828D2C8004DC00BA8D4E /* StartView.swift */,
-				FB80828B2C8004DC00BA8D4E /* TodayTasksView.swift */,
+				FB80828B2C8004DC00BA8D4E /* PendingTasksView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -155,7 +153,6 @@
 		FB8082702C80047400BA8D4E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FB80825F2C8003F800BA8D4E /* Item.swift */,
 				FB8082712C80048800BA8D4E /* Task.swift */,
 			);
 			path = Model;
@@ -257,12 +254,11 @@
 				FB8082722C80048800BA8D4E /* Task.swift in Sources */,
 				FB8082912C8004DC00BA8D4E /* StartView.swift in Sources */,
 				FB8082762C8004B200BA8D4E /* TaskGroupTilesView.swift in Sources */,
-				FB80828F2C8004DC00BA8D4E /* TodayTasksView.swift in Sources */,
+				FB80828F2C8004DC00BA8D4E /* PendingTasksView.swift in Sources */,
 				FB8082902C8004DC00BA8D4E /* HomeView.swift in Sources */,
 				FB80828E2C8004DC00BA8D4E /* AddProjectView.swift in Sources */,
 				FB80825E2C8003F800BA8D4E /* ContentView.swift in Sources */,
 				FB8082772C8004B200BA8D4E /* ProgressCardView.swift in Sources */,
-				FB8082602C8003F800BA8D4E /* Item.swift in Sources */,
 				FB80825C2C8003F800BA8D4E /* ToDoAppApp.swift in Sources */,
 				FB8082782C8004B200BA8D4E /* HomeBoardView.swift in Sources */,
 			);
