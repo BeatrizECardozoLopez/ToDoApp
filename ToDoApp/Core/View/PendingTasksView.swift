@@ -24,19 +24,13 @@ struct PendingTasksView: View {
         ZStack {
             VStack {
                 HStack{
+                    
+                    Spacer()
                     Text("Today's Tasks")
                         .font(.custom(boldFont, size: 30))
                         .foregroundStyle(.primary)
-                    
                     Spacer()
                     
-                    Button{
-                        self.showNewTask = true
-                    } label: {
-                        Image(systemName: "plus.circle")
-                            .font(.title)
-                            .foregroundStyle(Color("PrimaryColor"))
-                    }
                 } 
                 .padding()
                 
