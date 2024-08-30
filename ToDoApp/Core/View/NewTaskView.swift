@@ -16,6 +16,7 @@ struct NewTaskView: View {
     @State var title: String = ""
     @State var selectedPriority: Priority = .normal
     @State var selectedCategory: Category = .office
+    @State var selectedDate: Date = Date()
     @State var isEditing = false
     
     var body: some View {
@@ -25,6 +26,8 @@ struct NewTaskView: View {
             TaskGroupPickerView(selectedCategory: self.$selectedCategory)
             
             PriorityPickerView(selectedPriority: self.$selectedPriority)
+            
+            CustomizedDatePickerView(selectedDate: self.$selectedDate)
             
             TextFieldView(title: "Task Title", isMultiLine: false)
             
