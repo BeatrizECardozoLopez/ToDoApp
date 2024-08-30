@@ -1,5 +1,5 @@
 //
-//  CustomizedDatePickerView.swift
+//  CustomizedTimePickerView.swift
 //  ToDoApp
 //
 //  Created by Beatriz Cardozo on 30/8/24.
@@ -7,33 +7,35 @@
 
 import SwiftUI
 
-struct CustomizedDatePickerView: View {
-    @Binding var selectedDate: Date
+struct CustomizedTimePickerView: View {
+    @Binding var selectedHour: Date
     @State private var showDatePicker: Bool = false
     
     var body: some View {
         
         HStack {
-            Image(systemName: "calendar")
+            Image(systemName: "clock.fill")
                 .foregroundStyle(Color("PrimaryColor"))
                 .font(.system(size: 16))
                 .padding(.vertical, 10)
                 .padding(.horizontal, 8)
             
             VStack (alignment: .leading) {
-                Text("Date")
+                Text("Hour")
                     .font(.custom(boldFont, size: 14))
                     .foregroundStyle(.secondary)
+                
             }
             
             Spacer()
             
-            DatePicker("Select a date", selection: $selectedDate, displayedComponents: .date)
+            DatePicker("Select a date", selection: $selectedHour, displayedComponents: .hourAndMinute)
                 .font(.custom(boldFont, size: 26))
                 .foregroundStyle(.primary)
                 .background(.clear)
                 .labelsHidden()
                 .accentColor(Color("PrimaryColor"))
+            
         }
         .padding()
         .background(.white)
@@ -41,7 +43,6 @@ struct CustomizedDatePickerView: View {
         .frame(width: UIScreen.main.bounds.width - 50)
         .shadow(color: Color.gray.opacity(0.3), radius: 10, x: 0, y: 2)
         .padding(.vertical, 12)
-
     }
     
     private var dateFormatter: DateFormatter {
@@ -52,7 +53,6 @@ struct CustomizedDatePickerView: View {
     }
 }
 
-
 #Preview {
-    CustomizedDatePickerView(selectedDate: .constant(Date()))
+    CustomizedTimePickerView(selectedHour: .constant(Date()))
 }

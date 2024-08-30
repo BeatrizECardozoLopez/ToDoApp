@@ -30,6 +30,8 @@
 		FB8082942C800F1400BA8D4E /* PendingTaskTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8082932C800F1400BA8D4E /* PendingTaskTileView.swift */; };
 		FB8082962C80298100BA8D4E /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8082952C80298100BA8D4E /* TextFieldView.swift */; };
 		FBA424F52C81BE99008C69FD /* CustomizedDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA424F42C81BE99008C69FD /* CustomizedDatePickerView.swift */; };
+		FBA424F72C8204D6008C69FD /* CustomizedTimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA424F62C8204D6008C69FD /* CustomizedTimePickerView.swift */; };
+		FBA424F92C825FA5008C69FD /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA424F82C825FA5008C69FD /* ProfileView.swift */; };
 		FBC45C992C80DF0B008E8C8E /* PriorityPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC45C982C80DF0B008E8C8E /* PriorityPickerView.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,8 @@
 		FB8082932C800F1400BA8D4E /* PendingTaskTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingTaskTileView.swift; sourceTree = "<group>"; };
 		FB8082952C80298100BA8D4E /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		FBA424F42C81BE99008C69FD /* CustomizedDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedDatePickerView.swift; sourceTree = "<group>"; };
+		FBA424F62C8204D6008C69FD /* CustomizedTimePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedTimePickerView.swift; sourceTree = "<group>"; };
+		FBA424F82C825FA5008C69FD /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		FBC45C982C80DF0B008E8C8E /* PriorityPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityPickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,6 +134,7 @@
 				FB8082952C80298100BA8D4E /* TextFieldView.swift */,
 				FBC45C982C80DF0B008E8C8E /* PriorityPickerView.swift */,
 				FBA424F42C81BE99008C69FD /* CustomizedDatePickerView.swift */,
+				FBA424F62C8204D6008C69FD /* CustomizedTimePickerView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -158,6 +163,7 @@
 				FB80828C2C8004DC00BA8D4E /* HomeView.swift */,
 				FB80828D2C8004DC00BA8D4E /* StartView.swift */,
 				FB80828B2C8004DC00BA8D4E /* PendingTasksView.swift */,
+				FBA424F82C825FA5008C69FD /* ProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -268,8 +274,10 @@
 				FB8082962C80298100BA8D4E /* TextFieldView.swift in Sources */,
 				FB8082942C800F1400BA8D4E /* PendingTaskTileView.swift in Sources */,
 				FB8082762C8004B200BA8D4E /* TaskGroupTilesView.swift in Sources */,
+				FBA424F72C8204D6008C69FD /* CustomizedTimePickerView.swift in Sources */,
 				FB80828F2C8004DC00BA8D4E /* PendingTasksView.swift in Sources */,
 				FB8082902C8004DC00BA8D4E /* HomeView.swift in Sources */,
+				FBA424F92C825FA5008C69FD /* ProfileView.swift in Sources */,
 				FBA424F52C81BE99008C69FD /* CustomizedDatePickerView.swift in Sources */,
 				FBC45C992C80DF0B008E8C8E /* PriorityPickerView.swift in Sources */,
 				FB80828E2C8004DC00BA8D4E /* NewTaskView.swift in Sources */,

@@ -29,6 +29,7 @@ struct HomeView: View {
              inProgress()
              TaskGroup()
          }
+         .padding(.bottom, 32)
      }
  }
 }
@@ -117,6 +118,8 @@ struct homeTitle: View {
             .foregroundStyle(.primary)
     }
 }
+
+
 
 
 #Preview {

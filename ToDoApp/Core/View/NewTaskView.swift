@@ -20,34 +20,38 @@ struct NewTaskView: View {
     @State var isEditing = false
     
     var body: some View {
-        
-        VStack {
-            NewTaskBar()
-            TaskGroupPickerView(selectedCategory: self.$selectedCategory)
-            
-            PriorityPickerView(selectedPriority: self.$selectedPriority)
-            
-            CustomizedDatePickerView(selectedDate: self.$selectedDate)
-            
-            TextFieldView(title: "Task Title", isMultiLine: false)
-            
-            TextFieldView(title: "Description", isMultiLine: true)
-            
-            Button{
-                //TODO: Create new task
-            } label: {
-                Text("Create")
-                    .font(.custom(boldFont, size: 16))
-                    .foregroundStyle(.primary)
+        ScrollView (showsIndicators: false){
+            VStack {
+                NewTaskBar()
+                TaskGroupPickerView(selectedCategory: self.$selectedCategory)
+                
+                PriorityPickerView(selectedPriority: self.$selectedPriority)
+                
+                CustomizedDatePickerView(selectedDate: self.$selectedDate)
+                
+                CustomizedTimePickerView(selectedHour: self.$selectedDate)
+                
+                TextFieldView(title: "Task Title", isMultiLine: false)
+                
+                TextFieldView(title: "Description", isMultiLine: true)
+                
+                Button{
+                    //TODO: Create new task
+                } label: {
+                    Text("Create")
+                        .font(.custom(boldFont, size: 16))
+                        .foregroundStyle(.primary)
+                }
+                .frame(width: 150)
+                .foregroundColor(.white)
+                .padding()
+                .background(Color("PrimaryColor"))
+                .cornerRadius(15)
+                .padding(.horizontal, 20)
+                .padding(.vertical, 24)
+                Spacer()
             }
-            .frame(width: 150)
-            .foregroundColor(.white)
-            .padding()
-            .background(Color("PrimaryColor"))
-            .cornerRadius(15)
-            .padding(.horizontal, 20)
-            .padding(.vertical, 24)
-            Spacer()
+            .padding(.bottom, 32)
         }
     }
 }
