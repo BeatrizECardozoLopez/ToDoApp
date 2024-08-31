@@ -90,7 +90,7 @@ enum Tab: String, CaseIterable {
         case .AddTask:
             return "Add Task"
         case .TodayTasks:
-            return "Today"
+            return "Tasks"
         case .Profile:
             return "Profile"
         }
@@ -118,4 +118,22 @@ struct MaterialEffect: UIViewRepresentable {
 
 #Preview {
     ContentView()
+        .modelContainer(previewContainer)
 }
+
+
+//Dunb Data for the preview to work
+@MainActor
+let previewContainer: ModelContainer = {
+    do {
+        let container = try ModelContainer(for: Task.self, configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        
+        for index in 1...5 {
+            let newTask = Task(title: "Task \(index)", priority: .normal, category: .study, date: Date(), time: Date())
+            container.mainContext.insert(newTask)
+        }
+        return container
+    } catch {
+        fatalError("Error al crear el container")
+    }
+} ()
