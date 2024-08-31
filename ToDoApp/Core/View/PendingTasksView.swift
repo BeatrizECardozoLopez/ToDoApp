@@ -38,6 +38,9 @@ struct PendingTasksView: View {
                     ForEach(self.tasks){ task in
                         PendingTaskTileView(task: task)
                     }
+                    .onDelete(perform: { indexSet in
+                        self.deleteTask(indexSet: indexSet)
+                    })
                     .listRowSeparator(.hidden)
                 }
                 .listStyle(.plain)
