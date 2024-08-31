@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct TextFieldView: View {
     @State var title: String
-    @State var data: String = ""
-    @State var isMultiLine: Bool
+    @Binding var data: String
+    var isMultiLine: Bool
     
 
     var body: some View {
@@ -42,5 +43,5 @@ struct TextFieldView: View {
 }
 
 #Preview {
-    TextFieldView(title: "Title", isMultiLine: false)
+    TextFieldView(title: "Title", data: .constant(""), isMultiLine: false)
 }

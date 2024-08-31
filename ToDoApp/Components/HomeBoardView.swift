@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HomeBoardView: View {
+    
+    var totalCompletedPercentage: CGFloat
+    
     var body: some View {
         
         ZStack {
@@ -17,36 +21,39 @@ struct HomeBoardView: View {
             
             HStack (spacing: 24) {
                 VStack (alignment: .leading, spacing: 24){
-                    Text("Your today's task almost done!")
+                    Text(totalCompletedPercentage < 20 ? "Keep pushing forward!" :
+                            totalCompletedPercentage < 40 ? "Progress is looking good!" :
+                            totalCompletedPercentage < 60 ? "Halfway there, keep it up!" :
+                            totalCompletedPercentage < 85 ? "You're making great progress!" :
+                            totalCompletedPercentage < 85 ? "Almost there, keep pushing!" :
+                            "Done! You're killing it!"
+                                            )
                         .foregroundColor(.white)
                         .fontWeight(.semibold)
                         .font(.custom(boldFont, size: 18))
                     
-                    Button{
-                        //TODO: funcionality
-                    } label: {
-                        Text("View Task")
-                            .foregroundStyle(Color("PrimaryColor"))
-                            .padding()
-                            .font(.custom(boldFont, size: 18))
-                    }
-                    .background(.white)
-                    .cornerRadius(20)
+//                    Button{
+//                        //TODO: funcionality
+//                    } label: {
+//                        Text("View Task")
+//                            .foregroundStyle(Color("PrimaryColor"))
+//                            .padding()
+//                            .font(.custom(boldFont, size: 18))
+//                    }
+//                    .background(.white)
+//                    .cornerRadius(20)
                 }
-                
-                 
-                
                 ZStack {
                     Circle()
                         .stroke(Color(.lightGray), lineWidth: 5)
                         .frame(width: 80, height: 80)
                     
                     Circle()
-                        .trim(from: 0.0, to: CGFloat(0.85))
+                        .trim(from: 0.0, to: CGFloat(totalCompletedPercentage/100))
                         .stroke(.white, lineWidth: 5)
                         .frame(width: 80, height: 80)
 
-                    Text(String(format: "%.0f", 0.85*100) + "%")
+                    Text(String(format: "%.0f", totalCompletedPercentage) + "%")
                         .foregroundStyle(.white)
                         .font(.custom(boldFont, size: 18))
                }
@@ -60,5 +67,5 @@ struct HomeBoardView: View {
 }
 
 #Preview {
-    HomeBoardView()
+    HomeBoardView(totalCompletedPercentage: 0.85)
 }

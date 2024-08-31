@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct PriorityPickerView: View {
     @Binding var selectedPriority: Priority

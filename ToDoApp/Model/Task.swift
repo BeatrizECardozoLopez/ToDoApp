@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
 enum Priority: Int, CaseIterable{
     case low = 1
@@ -97,18 +98,40 @@ enum Category: Int, CaseIterable{
     }
 }
 
-@Observable class Task: Identifiable {
+@Model class Task: Identifiable {
     var id = UUID()
     var title: String
-    var priority: Priority
-    var category: Category
+    @Transient var priority: Priority {
+        get {
+            return Priority(rawValue: Int(priorityNum)) ?? .normal
+        }
+        set {
+            self.priorityNum = Int(newValue.rawValue)
+        }
+    }
+    @Attribute(originalName: "priority") var priorityNum: Priority.RawValue
+    @Transient var category: Category {
+        get {
+            return Category(rawValue: Int(categoryNum)) ?? .office
+        }
+        set {
+            self.categoryNum = Int(newValue.rawValue)
+        }
+    }
+    @Attribute(originalName: "category") var categoryNum: Category.RawValue
+    var date: Date
+    var time: Date
     var isCompleted: Bool
     
-    init(id: UUID = UUID(), title: String = "", priority: Priority = .normal, category: Category = .personal, isCompleted: Bool = false) {
+    init(id: UUID = UUID(), title: String = "", priority: Priority = .normal, category: Category = .personal, date: Date = Date(), time: Date = Date(), isCompleted: Bool = false) {
         self.title = title
+        self.date = date
+        self.time = time
+        self.isCompleted = isCompleted
+        self.priorityNum = priority.rawValue
+        self.categoryNum = category.rawValue
         self.priority = priority
         self.category = category
-        self.isCompleted = isCompleted
     }
     
 }

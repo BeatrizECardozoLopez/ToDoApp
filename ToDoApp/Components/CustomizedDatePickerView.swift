@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct CustomizedDatePickerView: View {
     @Binding var selectedDate: Date
-    @State private var showDatePicker: Bool = false
+    var showDatePicker: Bool = false
     
     var body: some View {
         

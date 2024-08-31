@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct CustomizedTimePickerView: View {
     @Binding var selectedHour: Date

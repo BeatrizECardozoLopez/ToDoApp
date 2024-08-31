@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 
 struct TaskGroupTilesView: View {
@@ -45,11 +46,11 @@ struct TaskGroupTilesView: View {
                     .frame(width: 50, height: 50)
                 
                 Circle()
-                    .trim(from: 0.0, to: CGFloat(completedPercentage))
+                    .trim(from: 0.0, to: CGFloat(completedPercentage/100))
                     .stroke(primaryColor, lineWidth: 5)
                     .frame(width: 50, height: 50)
 
-                Text(String(format: "%.0f", completedPercentage*100) + "%")
+                Text(String(format: "%.0f", completedPercentage) + "%")
                     .font(.custom(semiBoldFont, size: 12))
            }
         }

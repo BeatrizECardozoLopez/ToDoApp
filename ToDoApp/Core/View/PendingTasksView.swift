@@ -10,23 +10,23 @@ import SwiftData
 
 struct PendingTasksView: View {
     
-    @State var tasks: [Task] = []
+    //@Query(sort: \Task.priorityNum) private var tasks: [Task] //Ordenado por prioridad, primero low
+    @Query(sort: \Task.priorityNum, order: .reverse) private var tasks: [Task] //Ordenado por prioridad, primero high
+    
+    @Environment(\.modelContext) private var modelContext //Swift Data
     
     //MARK: Create new task
     @State private var newTaskTitle: String = ""
     @State private var newTaskPriority: Priority = .normal
     @State private var newTaskCategory: Category = .personal
     
-    @State private var showNewTask = false
-    
     var body: some View {
         
         ZStack {
             VStack {
                 HStack{
-                    
                     Spacer()
-                    Text("Today's Tasks")
+                    Text("Tasks")
                         .font(.custom(boldFont, size: 30))
                         .foregroundStyle(.primary)
                     Spacer()
@@ -41,29 +41,25 @@ struct PendingTasksView: View {
                     .listRowSeparator(.hidden)
                 }
                 .listStyle(.plain)
-                .rotation3DEffect(
-                    Angle(degrees: self.showNewTask ? 8 : 0), axis: (x: 1, y: 0, z: 0))
-                .offset(y: self.showNewTask ? -40 : 0)
-                .animation(.easeInOut, value: self.showNewTask)
                 .onAppear{
                     UITableView.appearance().separatorColor = .clear
                 }
                 
                 if self.tasks.count == 0 {
                     NoTasksView()
-                    Spacer()
                 }
-                
-                if self.showNewTask {
-                    //TODO: Create form to create new task
-                }
-                
-                
             }
             
             
         }
         
+    }
+    
+    private func deleteTask(indexSet: IndexSet) {
+        for index in indexSet {
+            let taskToDelete = self.tasks[index]
+            self.modelContext.delete(taskToDelete)
+        }
     }
 }
 

@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct PendingTaskTileView: View {
     
-    @Bindable var task: Task
+    @State var task: Task
     
     var body: some View {
         
@@ -27,8 +28,8 @@ struct PendingTaskTileView: View {
                 
 // Just for now, til i rethink the design
                 HStack{
-                    Image(systemName: "clock.fill")
-                    Text("10:00 AM")
+                    Image(systemName: "calendar")
+                    Text(dateFormatter.string(from: self.task.date))
                         .font(.custom(boldFont, size: 16))
                     
                     
@@ -74,6 +75,13 @@ struct PendingTaskTileView: View {
         .padding(.vertical, 12)
         
     }
+    
+    private var dateFormatter: DateFormatter {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
+            return dateFormatter
+    }
 }
 
 
@@ -92,5 +100,5 @@ struct CheckboxStyle: ToggleStyle {
 }
 
 #Preview {
-    PendingTaskTileView(task: Task(title: "Market Research", priority: .low, category: .office))
+    PendingTaskTileView(task: Task(title: "Market Research", priority: .low,category: .office))
 }

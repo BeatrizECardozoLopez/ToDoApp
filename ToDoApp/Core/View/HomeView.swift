@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 //MARK: Font Variables
 let regularFont = "Mulish-Regular"
@@ -18,13 +19,15 @@ let mediumFont = "Mulish-Medium"
 let extraLightFont = "Mulish-ExtraLight"
 
 struct HomeView: View {
+    //Read Tasks form Swift Data
+    @Query(sort: \Task.priorityNum, order: .reverse) private var tasks: [Task]
     
  var body: some View {
 
      ScrollView {
          VStack{
              TopBar()
-             HomeBoardView()
+             HomeBoardView(totalCompletedPercentage: percentageCompletedTasks(inTasks: tasks))
                  .padding(.vertical)
              inProgress()
              TaskGroup()
@@ -65,8 +68,9 @@ struct TopBar: View {
 
 //MARK: In Progress Design
 struct inProgress: View {
+    //Read Tasks form Swift Data
+    @Query(sort: \Task.priorityNum, order: .reverse) private var tasks: [Task]
     var body: some View {
-
         VStack {
             HStack {
                 homeTitle(title: "In Progress")
@@ -76,11 +80,13 @@ struct inProgress: View {
             
             ScrollView(.horizontal, showsIndicators: false){
                 HStack (spacing: 30){
-                    ProgressCardView(category: "Office Project", taskTitle: "Grocery shopping app design", icon: "briefcase.fill", primaryColor: Color("OfficePrimaryColor"), secondaryColor: Color("OfficeSecondaryColor"), completedPercentage: 0.7)
+                    ForEach(self.tasks.filter { !$0.isCompleted }) { task in
+                        ProgressCardView(category: task.category, taskTitle: task.title, icon: task.category.iconImageName(), primaryColor: task.category.primaryColor(), secondaryColor: task.category.secondaryColor())
+                    }
                     
-                    ProgressCardView(category: "Personal Project", taskTitle: "Uber Eats redesign challenge", icon: "person.circle.fill", primaryColor: Color("PersonalPrimaryColor"), secondaryColor: Color("PersonalSecondaryColor"), completedPercentage: 0.2)
-                    
-                    ProgressCardView(category: "Daily Study", taskTitle: "Study for Linear Algebra Test", icon: "book.pages.fill", primaryColor: Color("StudyPrimaryColor"), secondaryColor: Color("StudySecondaryColor"), completedPercentage: 0.87)
+                    if !tasks.contains(where: { !$0.isCompleted }) {
+                        NoInProgressTasksView()
+                    }
                 }
                 .padding(.horizontal, 32)
             }
@@ -90,8 +96,25 @@ struct inProgress: View {
     }
 }
 
+//MARK: No In Progress Design
+struct NoInProgressTasksView: View {
+    var body: some View {
+        HStack{
+            Text("Stay ahead, no tasks in progress!")
+                .font(.custom(semiBoldFont, size: 12))
+                .foregroundStyle(.secondary)
+            Spacer()
+        }
+    }
+}
+
 //MARK: Task Groups Design
 struct TaskGroup: View {
+    //Read Tasks form Swift Data
+    @Query(sort: \Task.priorityNum, order: .reverse) private var tasks: [Task]
+    
+    
+    
     var body: some View {
         VStack {
             HStack {
@@ -100,11 +123,11 @@ struct TaskGroup: View {
             }
             .padding(.horizontal, 16)
 
-            TaskGroupTilesView(category: "Office Project", icon: "briefcase.fill", primaryColor: Color("OfficePrimaryColor"), secondaryColor: Color("OfficeSecondaryColor"), completedPercentage: 0.7, totalTasks: "23 Tasks")
+            TaskGroupTilesView(category: "Office Project", icon: "briefcase.fill", primaryColor: Color("OfficePrimaryColor"), secondaryColor: Color("OfficeSecondaryColor"), completedPercentage: percentageCompletedTasksforCategory(forCategory: .office, inTasks: self.tasks), totalTasks: "\(totalTasksforCategory(forCategory: .office, inTasks: tasks)) Tasks")
             
-            TaskGroupTilesView(category: "Personal Project", icon: "person.circle.fill", primaryColor: Color("PersonalPrimaryColor"), secondaryColor: Color("PersonalSecondaryColor"), completedPercentage: 0.52, totalTasks: "30 Tasks")
+            TaskGroupTilesView(category: "Personal Project", icon: "person.circle.fill", primaryColor: Color("PersonalPrimaryColor"), secondaryColor: Color("PersonalSecondaryColor"), completedPercentage: percentageCompletedTasksforCategory(forCategory: .personal, inTasks: self.tasks), totalTasks: "\(totalTasksforCategory(forCategory: .personal, inTasks: tasks)) Tasks")
             
-            TaskGroupTilesView(category: "Daily Study", icon: "book.pages.fill", primaryColor: Color("StudyPrimaryColor"), secondaryColor: Color("StudySecondaryColor"), completedPercentage: 0.87, totalTasks: "30 Tasks")
+            TaskGroupTilesView(category: "Daily Study", icon: "book.pages.fill", primaryColor: Color("StudyPrimaryColor"), secondaryColor: Color("StudySecondaryColor"), completedPercentage: percentageCompletedTasksforCategory(forCategory: .study, inTasks: self.tasks), totalTasks: "\(totalTasksforCategory(forCategory: .study, inTasks: tasks)) Tasks")
         }
         .padding()
     }
@@ -119,7 +142,34 @@ struct homeTitle: View {
     }
 }
 
+func percentageCompletedTasks(inTasks tasks: [Task]) -> Double {
+    let completedTasks = tasks.filter { $0.isCompleted }
+    if completedTasks.isEmpty {
+        return 0.0
+    } else {
+        return Double(completedTasks.count) / Double(tasks.count) * 100.0
+    }
+}
 
+
+func totalTasksforCategory(forCategory category: Category, inTasks tasks: [Task]) -> Int {
+    let tasksForCategory = tasks.filter { $0.category == category }
+    if tasksForCategory.isEmpty {
+        return 0
+    } else {
+        return tasksForCategory.count
+    }
+}
+
+func percentageCompletedTasksforCategory(forCategory category: Category, inTasks tasks: [Task]) -> Double {
+    let tasksForCategory = tasks.filter { $0.category == category }
+    let completedTasks = tasksForCategory.filter { $0.isCompleted }
+    if tasksForCategory.isEmpty {
+        return 0.0
+    } else {
+        return Double(completedTasks.count) / Double(tasksForCategory.count) * 100.0
+    }
+}
 
 
 #Preview {

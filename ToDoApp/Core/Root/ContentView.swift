@@ -11,7 +11,6 @@ import SwiftData
 struct ContentView: View {
     
     @State var currentTab: Tab = .Home
-    @State var tasks: [Task] = []
     @Namespace private var tabNamespace
     
     //Hide Native Bar
@@ -22,7 +21,7 @@ struct ContentView: View {
     var body: some View {
         TabView (selection: $currentTab){
             HomeView().tag(Tab.Home)
-            NewTaskView(tasks: self.$tasks).tag(Tab.AddTask)
+            NewTaskView().tag(Tab.AddTask)
             PendingTasksView().tag(Tab.TodayTasks)
             ProfileView().tag(Tab.Profile)
         } .overlay (
