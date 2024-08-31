@@ -52,7 +52,7 @@ struct TopBar: View {
                 Text("Hello!")
                     .font(.custom(semiBoldFont, size: 18))
                     .foregroundStyle(.secondary)
-                Text("Beatriz Cardozo")
+                Text("Sophie Martinez")
                     .font(.custom(boldFont, size: 21))
                     .kerning(0.5)
             }
