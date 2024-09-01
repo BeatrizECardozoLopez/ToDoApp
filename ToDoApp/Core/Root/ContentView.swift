@@ -122,14 +122,14 @@ struct MaterialEffect: UIViewRepresentable {
 }
 
 
-//Dunb Data for the preview to work
+//Dumb Data for the preview to work
 @MainActor
 let previewContainer: ModelContainer = {
     do {
         let container = try ModelContainer(for: Task.self, configurations: ModelConfiguration(isStoredInMemoryOnly: true))
         
         for index in 1...5 {
-            let newTask = Task(title: "Task \(index)", priority: .normal, category: .study, date: Date(), time: Date())
+            let newTask = Task(title: "Task \(index)", taskDescription: "Description of the tasks", priority: .normal, category: .study, date: Date(), time: Date())
             container.mainContext.insert(newTask)
         }
         return container

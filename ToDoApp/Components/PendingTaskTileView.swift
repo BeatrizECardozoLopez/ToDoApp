@@ -17,27 +17,26 @@ struct PendingTaskTileView: View {
         HStack {
             VStack (alignment: .leading, spacing: 10){
                 Text(task.category.toString())
-                    .font(.custom(boldFont, size: 14))
+                    .font(.custom(boldFont, size: 12))
                     .foregroundStyle(.secondary)
                 
                 Text(task.title)
-                    .font(.custom(semiBoldFont, size: 20))
+                    .font(.custom(semiBoldFont, size: 18))
                     .foregroundStyle(self.task.isCompleted ? .secondary : .primary)
                     .strikethrough(self.task.isCompleted, color: Color("PrimaryColor"))
                     .animation(.default)
                 
-// Just for now, til i rethink the design
                 HStack{
                     Image(systemName: "calendar")
                     Text(dateFormatter.string(from: self.task.date))
-                        .font(.custom(boldFont, size: 16))
+                        .font(.custom(boldFont, size: 12))
                     
                     
-                    Text(task.priority.toString())
-                        .foregroundStyle(self.task.isCompleted ? .secondary :task.priority.primaryColor())
-                        .font(.custom(blackFont, size: 14))
+                    Text(task.isCompleted ? "Done" : task.priority.toString())
+                        .foregroundStyle(task.isCompleted ? .white : self.task.isCompleted ? .secondary :task.priority.primaryColor())
+                        .font(.custom(blackFont, size: 10))
                         .padding(5)
-                        .background(self.task.isCompleted ? Color(.lightGray) :task.priority.secondaryColor())
+                        .background(task.isCompleted ? .green : self.task.isCompleted ? Color(.lightGray) :task.priority.secondaryColor())
                         .cornerRadius(10)
                         .padding(.horizontal, 20)
                 }
@@ -45,7 +44,7 @@ struct PendingTaskTileView: View {
                 .animation(.default)
                 
             }
-            .padding(.vertical, 10)
+            .padding(.vertical, 5)
             
             Spacer()
             
@@ -53,26 +52,23 @@ struct PendingTaskTileView: View {
             VStack (spacing: 22){
                 Image(systemName: task.category.iconImageName())
                     .foregroundStyle(self.task.isCompleted ? .secondary : task.category.primaryColor())
-                    .font(.system(size: 16))
+                    .font(.system(size: 12))
+                    .frame(width: 15, height: 10)
                     .padding(.vertical, 15)
                     .padding(.horizontal, 12)
                     .background(self.task.isCompleted ? Color(.lightGray) : task.category.secondaryColor())
                     .cornerRadius(20)
                     .animation(.default)
-                
-    
-                
                 Toggle(isOn: self.$task.isCompleted) {}
                     .toggleStyle(CheckboxStyle())
             }
-            
         }
-        .padding()
+        .padding(.vertical, 10)
+        .padding(.horizontal, 20)
         .background(.white)
-        .cornerRadius(20)
-        .frame(width: UIScreen.main.bounds.width - 50, height: 150)
+        .cornerRadius(15)
+        .frame(width: UIScreen.main.bounds.width - 50, height: 100)
         .shadow(color: Color.gray.opacity(0.3), radius: 10, x: 0, y: 2)
-        
     }
     
     private var dateFormatter: DateFormatter {
@@ -82,7 +78,6 @@ struct PendingTaskTileView: View {
             return dateFormatter
     }
 }
-
 
 //MARK: CheckBox Style
 struct CheckboxStyle: ToggleStyle {
@@ -101,3 +96,5 @@ struct CheckboxStyle: ToggleStyle {
 #Preview {
     PendingTaskTileView(task: Task(title: "Market Research", priority: .low,category: .office))
 }
+
+

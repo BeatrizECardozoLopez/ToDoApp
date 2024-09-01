@@ -52,15 +52,13 @@ struct TopBar: View {
                 Text("Hello!")
                     .font(.custom(semiBoldFont, size: 18))
                     .foregroundStyle(.secondary)
-                Text("Sophie Martinez")
+                Text("Jane Doe")
                     .font(.custom(boldFont, size: 21))
                     .kerning(0.5)
             }
             Spacer()
-            Image(systemName: "bell.fill")
-                .imageScale(.large)
         }
-        .padding(.horizontal, 24)
+        .padding(.horizontal, 32)
 
     }
 }

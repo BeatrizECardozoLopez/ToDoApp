@@ -101,6 +101,7 @@ enum Category: Int, CaseIterable{
 @Model class Task: Identifiable {
     var id = UUID()
     var title: String
+    var taskDescription: String
     @Transient var priority: Priority {
         get {
             return Priority(rawValue: Int(priorityNum)) ?? .normal
@@ -123,8 +124,9 @@ enum Category: Int, CaseIterable{
     var time: Date
     var isCompleted: Bool
     
-    init(id: UUID = UUID(), title: String = "", priority: Priority = .normal, category: Category = .personal, date: Date = Date(), time: Date = Date(), isCompleted: Bool = false) {
+    init(id: UUID = UUID(), title: String = "", taskDescription: String = "", priority: Priority = .normal, category: Category = .personal, date: Date = Date(), time: Date = Date(), isCompleted: Bool = false) {
         self.title = title
+        self.taskDescription = taskDescription
         self.date = date
         self.time = time
         self.isCompleted = isCompleted

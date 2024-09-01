@@ -17,36 +17,37 @@ struct NewTaskView: View {
     @State var selectedCategory: Category = .office
     @State var selectedDate: Date = Date()
     @State var selectedTime: Date = Date()
-    @State var isEditing = false
     
-    @Environment(\.modelContext) private var modelContext //Swift Data
+    //MARK: Alert Variable
+    @State var showAlert: Bool = false
+    @State var taskCreatedSuccessfully: Bool = false
     
-    
+    //MARK: Swift Data modelContext to add task
+    @Environment(\.modelContext) private var modelContext
     
     var body: some View {
         ScrollView (showsIndicators: false){
             VStack {
                 NewTaskBar()
                 TaskGroupPickerView(selectedCategory: self.$selectedCategory)
-                
                 PriorityPickerView(selectedPriority: self.$selectedPriority)
-                
                 CustomizedDatePickerView(selectedDate: self.$selectedDate)
-                
                 CustomizedTimePickerView(selectedHour: self.$selectedTime)
-                
                 TextFieldView(title: "Task Title", data: self.$title, isMultiLine: false)
-                
                 TextFieldView(title: "Description", data: self.$description, isMultiLine: true)
                 
                 Button{
-                    
-                    if self.title.trimmingCharacters(in: .whitespaces) == "" {
-                        return
+                    if self.title.trimmingCharacters(in: .whitespacesAndNewlines) == "" && self.description.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
+                        self.showFailureAlert()
+                    } else {
+                        let taskCreationResult = self.addNewTask(title: self.title, taskDescription: self.description, priority: self.selectedPriority, category: self.selectedCategory, date: self.selectedDate, hour: self.selectedTime)
+                        if taskCreationResult {
+                            self.showSuccessAlert()
+                            self.resetFormValues()
+                        } else {
+                            self.showFailureAlert()
+                        }
                     }
-                    
-                    self.addNewTask(title: self.title, priority: self.selectedPriority, category: self.selectedCategory, date: self.selectedDate, hour: self.selectedTime)
-                    
                 } label: {
                     Text("Create")
                         .font(.custom(boldFont, size: 16))
@@ -59,18 +60,47 @@ struct NewTaskView: View {
                 .cornerRadius(15)
                 .padding(.horizontal, 20)
                 .padding(.vertical, 24)
+                .alert(isPresented: $showAlert) {
+                    if taskCreatedSuccessfully {
+                        return Alert(title: Text("Task Created Successfully"), message: Text(""), dismissButton: .default(Text("Let's go!")))
+                    } else {
+                         return Alert(title: Text("Task Creation Failed"), message: Text(""), dismissButton: .default(Text("Oh no!")))
+                     }
+                }
                 Spacer()
             }
             .padding(.bottom, 32)
         }
     }
     
-    private func addNewTask(title: String, priority: Priority, category: Category, date: Date, hour: Date, isCompleted: Bool = false) {
-        let task = Task(title: title, priority: priority, category: category, date: date, time: hour, isCompleted: isCompleted)
-        modelContext.insert(task)
+    private func addNewTask(title: String, taskDescription: String, priority: Priority, category: Category, date: Date, hour: Date, isCompleted: Bool = false) -> Bool {
+        let task = Task(title: title, taskDescription: taskDescription, priority: priority, category: category, date: date, time: hour, isCompleted: isCompleted)
+        do {
+            try modelContext.insert(task)
+            return true
+        } catch {
+            return false
+        }
     }
     
-    
+    func showSuccessAlert() {
+        self.showAlert = true
+        self.taskCreatedSuccessfully = true
+    }
+
+    func showFailureAlert() {
+        self.showAlert = true
+        self.taskCreatedSuccessfully = false
+    }
+
+    func resetFormValues() {
+        self.title = ""
+        self.selectedCategory = .office
+        self.description = ""
+        self.selectedPriority = .normal
+        self.selectedDate = Date()
+        self.selectedTime = Date()
+    }
     
     struct NewTaskBar: View {
         var body: some View {
@@ -78,7 +108,7 @@ struct NewTaskView: View {
             HStack {
                 Spacer()
                 Text("Add Task")
-                    .font(.custom(boldFont, size: 26))
+                    .font(.custom(boldFont, size: 25))
                     .foregroundStyle(.primary)
                 Spacer()
             }

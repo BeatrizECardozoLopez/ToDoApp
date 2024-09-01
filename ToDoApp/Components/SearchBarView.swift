@@ -10,13 +10,23 @@ import SwiftUI
 struct SearchBarView: View {
     
     @Binding var text: String
+    //Personalized Binding
+//    private var searchText: Binding<String> {
+//        Binding<String>(
+//            get: {
+//                self.text.capitalized
+//            }, set: {
+//                self.text = $0
+//            }
+//        )
+//    }
     @State private var isEditing: Bool = false
     
     var body: some View {
         
         HStack {
             TextField("Search a task...", text:  self.$text)
-                .font(.custom(boldFont, size: 18))
+                .font(.custom(boldFont, size: 14))
                 .padding(8)
                 .padding(.horizontal, 42)
                 .background(Color(.systemGray6))
@@ -24,9 +34,10 @@ struct SearchBarView: View {
                 .overlay(
                     HStack{
                         Image(systemName: "magnifyingglass")
-                            .foregroundStyle(.gray)
+                            .foregroundStyle(self.isEditing ? Color("PrimaryColor") : .gray)
                             .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
                             .padding(.leading, 8)
+                            
                         
                         if self.isEditing {
                             Button {
@@ -50,17 +61,16 @@ struct SearchBarView: View {
                 Button {
                     self.isEditing = false
                     self.text = ""
+                    UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
                 } label: {
                     Text("Cancel")
-                        .font(.custom(boldFont, size: 18))
+                        .font(.custom(boldFont, size: 14))
                         .foregroundStyle(Color("PrimaryColor"))
                 }
                 .padding(.trailing, 12)
                 .transition(.move(edge: .trailing))
             }
-        }
-        
-        
+        } 
     }
 }
 

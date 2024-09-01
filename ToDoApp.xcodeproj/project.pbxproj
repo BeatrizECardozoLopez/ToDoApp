@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FB0DA2372C84BFB5007BC2C3 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0DA2362C84BFB5007BC2C3 /* SearchBarView.swift */; };
+		FB0DA2392C84FB1E007BC2C3 /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0DA2382C84FB1E007BC2C3 /* TaskDetailView.swift */; };
 		FB80825C2C8003F800BA8D4E /* ToDoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80825B2C8003F800BA8D4E /* ToDoAppApp.swift */; };
 		FB80825E2C8003F800BA8D4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80825D2C8003F800BA8D4E /* ContentView.swift */; };
 		FB8082622C8003FB00BA8D4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB8082612C8003FB00BA8D4E /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		FB0DA2362C84BFB5007BC2C3 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		FB0DA2382C84FB1E007BC2C3 /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
 		FB8082582C8003F800BA8D4E /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB80825B2C8003F800BA8D4E /* ToDoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoAppApp.swift; sourceTree = "<group>"; };
 		FB80825D2C8003F800BA8D4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				FB80828D2C8004DC00BA8D4E /* StartView.swift */,
 				FB80828B2C8004DC00BA8D4E /* PendingTasksView.swift */,
 				FBA424F82C825FA5008C69FD /* ProfileView.swift */,
+				FB0DA2382C84FB1E007BC2C3 /* TaskDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -280,6 +283,7 @@
 				FBA424F72C8204D6008C69FD /* CustomizedTimePickerView.swift in Sources */,
 				FB80828F2C8004DC00BA8D4E /* PendingTasksView.swift in Sources */,
 				FB8082902C8004DC00BA8D4E /* HomeView.swift in Sources */,
+				FB0DA2392C84FB1E007BC2C3 /* TaskDetailView.swift in Sources */,
 				FBA424F92C825FA5008C69FD /* ProfileView.swift in Sources */,
 				FBA424F52C81BE99008C69FD /* CustomizedDatePickerView.swift in Sources */,
 				FBC45C992C80DF0B008E8C8E /* PriorityPickerView.swift in Sources */,

@@ -15,6 +15,8 @@ struct PendingTasksView: View {
     
     @Environment(\.modelContext) private var modelContext //Swift Data
     
+    @State var selectedTask: Task?
+    
     //MARK: Create new task
     @State private var newTaskTitle: String = ""
     @State private var newTaskPriority: Priority = .normal
@@ -23,42 +25,45 @@ struct PendingTasksView: View {
     
     var body: some View {
         
-        ZStack {
-            VStack {
+        VStack (alignment: .center){
                 HStack{
                     Spacer()
                     Text("Tasks")
-                        .font(.custom(boldFont, size: 30))
+                        .font(.custom(boldFont, size: 25))
                         .foregroundStyle(.primary)
                     Spacer()
                     
                 } 
                 .padding()
-                
                 SearchBarView(text: self.$searchText)
-                
+            NavigationStack {
                 List{
                     ForEach(self.tasks.filter({self.searchText.isEmpty ? true: $0.title.contains(self.searchText)})){ task in
                         PendingTaskTileView(task: task)
+                            .onTapGesture {
+                                self.selectedTask = task
+                            }
                     }
                     .onDelete(perform: { indexSet in
                         self.deleteTask(indexSet: indexSet)
                     })
+                    .sheet(item: self.$selectedTask) { task in
+                        TaskDetailView(task: task)
+                            .ignoresSafeArea()
+                            .presentationDetents([.medium, .large])
+                    }
                     .listRowSeparator(.hidden)
                 }
                 .listStyle(.plain)
                 .onAppear{
                     UITableView.appearance().separatorColor = .clear
                 }
-                
+            }
                 if self.tasks.count == 0 {
                     NoTasksView()
+                    .animation(.default)
                 }
             }
-            
-            
-        }
-        
     }
     
     private func deleteTask(indexSet: IndexSet) {
@@ -84,6 +89,8 @@ struct NoTasksView: View {
         }
     }
 }
+
+
 
 #Preview {
     PendingTasksView()

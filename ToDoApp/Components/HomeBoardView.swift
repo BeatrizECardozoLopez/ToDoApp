@@ -17,10 +17,9 @@ struct HomeBoardView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 20.0)
                 .fill(Color("PrimaryColor"))
-                .frame(height: 170)
+                .frame(height: 140)
             
             HStack (spacing: 24) {
-                VStack (alignment: .leading, spacing: 24){
                     Text(totalCompletedPercentage < 20 ? "Keep pushing forward!" :
                             totalCompletedPercentage < 40 ? "Progress is looking good!" :
                             totalCompletedPercentage < 60 ? "Halfway there, keep it up!" :
@@ -30,19 +29,9 @@ struct HomeBoardView: View {
                                             )
                         .foregroundColor(.white)
                         .fontWeight(.semibold)
-                        .font(.custom(boldFont, size: 18))
-                    
-//                    Button{
-//                        //TODO: funcionality
-//                    } label: {
-//                        Text("View Task")
-//                            .foregroundStyle(Color("PrimaryColor"))
-//                            .padding()
-//                            .font(.custom(boldFont, size: 18))
-//                    }
-//                    .background(.white)
-//                    .cornerRadius(20)
-                }
+                        .font(.custom(boldFont, size: 16))
+                        .frame(width: 150, height: 70)
+                Spacer()
                 ZStack {
                     Circle()
                         .stroke(Color(.lightGray), lineWidth: 5)
@@ -57,12 +46,11 @@ struct HomeBoardView: View {
                         .foregroundStyle(.white)
                         .font(.custom(boldFont, size: 18))
                }
-                
-                
+                .padding(.horizontal)
             }
+            .padding(.horizontal)
         }
         .padding(.horizontal, 32)
-        
     }
 }
 
