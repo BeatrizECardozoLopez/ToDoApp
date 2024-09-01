@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB0DA2372C84BFB5007BC2C3 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0DA2362C84BFB5007BC2C3 /* SearchBarView.swift */; };
 		FB80825C2C8003F800BA8D4E /* ToDoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80825B2C8003F800BA8D4E /* ToDoAppApp.swift */; };
 		FB80825E2C8003F800BA8D4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80825D2C8003F800BA8D4E /* ContentView.swift */; };
 		FB8082622C8003FB00BA8D4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB8082612C8003FB00BA8D4E /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB0DA2362C84BFB5007BC2C3 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 		FB8082582C8003F800BA8D4E /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB80825B2C8003F800BA8D4E /* ToDoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoAppApp.swift; sourceTree = "<group>"; };
 		FB80825D2C8003F800BA8D4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				FBC45C982C80DF0B008E8C8E /* PriorityPickerView.swift */,
 				FBA424F42C81BE99008C69FD /* CustomizedDatePickerView.swift */,
 				FBA424F62C8204D6008C69FD /* CustomizedTimePickerView.swift */,
+				FB0DA2362C84BFB5007BC2C3 /* SearchBarView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				FB80825E2C8003F800BA8D4E /* ContentView.swift in Sources */,
 				FB8082772C8004B200BA8D4E /* ProgressCardView.swift in Sources */,
 				FB80825C2C8003F800BA8D4E /* ToDoAppApp.swift in Sources */,
+				FB0DA2372C84BFB5007BC2C3 /* SearchBarView.swift in Sources */,
 				FB8082782C8004B200BA8D4E /* HomeBoardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

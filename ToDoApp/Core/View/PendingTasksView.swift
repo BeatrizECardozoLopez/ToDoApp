@@ -19,6 +19,7 @@ struct PendingTasksView: View {
     @State private var newTaskTitle: String = ""
     @State private var newTaskPriority: Priority = .normal
     @State private var newTaskCategory: Category = .personal
+    @State private var searchText: String = ""
     
     var body: some View {
         
@@ -34,8 +35,10 @@ struct PendingTasksView: View {
                 } 
                 .padding()
                 
+                SearchBarView(text: self.$searchText)
+                
                 List{
-                    ForEach(self.tasks){ task in
+                    ForEach(self.tasks.filter({self.searchText.isEmpty ? true: $0.title.contains(self.searchText)})){ task in
                         PendingTaskTileView(task: task)
                     }
                     .onDelete(perform: { indexSet in
