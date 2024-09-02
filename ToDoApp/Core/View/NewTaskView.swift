@@ -17,6 +17,8 @@ struct NewTaskView: View {
     @State var selectedCategory: Category = .office
     @State var selectedDate: Date = Date()
     @State var selectedTime: Date = Date()
+    @State private var horaSeleccionada = Date()
+    @State private var horaAislada: Date = Date()
     
     //MARK: Alert Variable
     @State var showAlert: Bool = false
@@ -32,7 +34,7 @@ struct NewTaskView: View {
                 TaskGroupPickerView(selectedCategory: self.$selectedCategory)
                 PriorityPickerView(selectedPriority: self.$selectedPriority)
                 CustomizedDatePickerView(selectedDate: self.$selectedDate)
-                CustomizedTimePickerView(selectedHour: self.$selectedTime)
+                CustomizedTimePickerView(scheduledTime: self.$horaSeleccionada)
                 TextFieldView(title: "Task Title", data: self.$title, isMultiLine: false)
                 TextFieldView(title: "Description", data: self.$description, isMultiLine: true)
                 
@@ -40,7 +42,7 @@ struct NewTaskView: View {
                     if self.title.trimmingCharacters(in: .whitespacesAndNewlines) == "" && self.description.trimmingCharacters(in: .whitespacesAndNewlines) == "" {
                         self.showFailureAlert()
                     } else {
-                        let taskCreationResult = self.addNewTask(title: self.title, taskDescription: self.description, priority: self.selectedPriority, category: self.selectedCategory, date: self.selectedDate, hour: self.selectedTime)
+                        let taskCreationResult = self.addNewTask(title: self.title, taskDescription: self.description, priority: self.selectedPriority, category: self.selectedCategory, date: self.selectedDate, hour: self.extraerHoraAislada(from: horaSeleccionada))
                         if taskCreationResult {
                             self.showSuccessAlert()
                             self.resetFormValues()
@@ -83,6 +85,13 @@ struct NewTaskView: View {
         }
     }
     
+    func extraerHoraAislada(from fecha: Date) -> Date {
+        let calendar = Calendar.current
+        let components = calendar.dateComponents([.hour, .minute], from: fecha)
+        let newDate = calendar.date(bySettingHour: components.hour ?? 0, minute: components.minute ?? 0, second: 0, of: Date()) ?? Date()
+        return newDate
+    }
+    
     func showSuccessAlert() {
         self.showAlert = true
         self.taskCreatedSuccessfully = true
@@ -104,7 +113,6 @@ struct NewTaskView: View {
     
     struct NewTaskBar: View {
         var body: some View {
-            
             HStack {
                 Spacer()
                 Text("Add Task")

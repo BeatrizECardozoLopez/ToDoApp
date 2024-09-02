@@ -9,8 +9,9 @@ import SwiftUI
 import SwiftData
 
 struct CustomizedTimePickerView: View {
-    @Binding var selectedHour: Date
+    @Binding var scheduledTime: Date
     @State private var showDatePicker: Bool = false
+    
     
     var body: some View {
         
@@ -30,12 +31,13 @@ struct CustomizedTimePickerView: View {
             
             Spacer()
             
-            DatePicker("Select a date", selection: $selectedHour, displayedComponents: .hourAndMinute)
+            DatePicker("Select a time", selection: self.$scheduledTime, displayedComponents: .hourAndMinute)
                 .font(.custom(boldFont, size: 26))
                 .foregroundStyle(.primary)
                 .background(.clear)
                 .labelsHidden()
                 .accentColor(Color("PrimaryColor"))
+          
             
         }
         .padding()
@@ -46,14 +48,8 @@ struct CustomizedTimePickerView: View {
         .padding(.vertical, 12)
     }
     
-    private var dateFormatter: DateFormatter {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .medium
-            dateFormatter.timeStyle = .none
-            return dateFormatter
-    }
 }
 
 #Preview {
-    CustomizedTimePickerView(selectedHour: .constant(Date()))
+    CustomizedTimePickerView(scheduledTime: .constant(Date()))
 }

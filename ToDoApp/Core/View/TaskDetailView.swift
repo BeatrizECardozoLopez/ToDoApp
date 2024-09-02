@@ -53,7 +53,7 @@ struct TaskDetailView: View {
                         HStack {
                             Image(systemName: "clock.fill")
                                 .foregroundStyle(task.category.primaryColor())
-                            Text(dateFormatter.string(from: self.task.time))
+                            Text(formatHourToString(date: self.task.time))
                                 .font(.custom(semiBoldFont, size: 16))
                                 .foregroundStyle(task.category.primaryColor())
                         }
@@ -87,7 +87,15 @@ struct TaskDetailView: View {
             dateFormatter.timeStyle = .none
             return dateFormatter
     }
+    
+    func formatHourToString(date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h:mm a"
+        return dateFormatter.string(from: date)
+    }
+    
 }
+
 
 #Preview {
     TaskDetailView(task: Task(title: "Task 1", taskDescription: "Stuff and more Stuff"))
