@@ -58,54 +58,70 @@ struct ProfileView: View {
             .shadow(color: Color.gray.opacity(0.3), radius: 10, x: 0, y: 2)
             
             
-            List{
-                Section ("General"){
-                    HStack{
-                        SettingsRowView(imageName: "gear", title: "Version", tintColor: Color(.systemGray))
+            VStack (alignment: .center){
+                HStack{
+                        SettingsRowView(imageName: "gear", title: "Version")
                         Spacer()
                         Text("1.0.0")
                             .font(.subheadline)
                             .foregroundStyle(.gray)
-                    }
                 }
+                .padding(.vertical, 10)
+                .padding(.horizontal, 20)
+                .background(.white)
+                .cornerRadius(10)
+                .frame(width: UIScreen.main.bounds.width - 50, height: 100)
+                .shadow(color: Color.gray.opacity(0.3), radius: 10, x: 0, y: 2)
                 
-                Section ("Personal Details"){
+                VStack {
                     //User Country
                     HStack{
-                        SettingsRowView(imageName: "mappin.and.ellipse", title: "Country", tintColor: Color(.systemGray))
+                        SettingsRowView(imageName: "mappin.and.ellipse", title: "Country")
                         Spacer()
                         Text("United States")
                             .font(.subheadline)
                             .foregroundStyle(.gray)
                     }
                     
+                    Divider()
+                    
                     //User Phone Number
                     HStack{
-                        SettingsRowView(imageName: "phone.fill", title: "Phone Number", tintColor: Color(.systemGray))
+                        SettingsRowView(imageName: "phone.fill", title: "Phone")
                         Spacer()
                         Text("(555) 123-4567")
                             .font(.subheadline)
                             .foregroundStyle(.gray)
                     }
+                    Divider()
                     
                     //User Gender
                     HStack{
-                        SettingsRowView(imageName: "figure.stand", title: "Gender", tintColor: Color(.systemGray))
+                        SettingsRowView(imageName: "figure.stand", title: "Gender")
                         Spacer()
                         Text("Female")
                             .font(.subheadline)
                             .foregroundStyle(.gray)
                     }
                 }
+                .padding(.vertical, 10)
+                .padding(.horizontal, 20)
+                .background(.white)
+                .cornerRadius(10)
+                .frame(width: UIScreen.main.bounds.width - 50)
+                .shadow(color: Color.gray.opacity(0.3), radius: 10, x: 0, y: 2)
                 
                 
-                Section ("Account"){
+                VStack (alignment: .leading){
                     
                     //Edit Personal Details Button
                     Button {
+                        
                     } label : {
-                        SettingsRowView(imageName: "pencil", title: "Edit Personal Details", tintColor: .secondary)
+                        SettingsRowView(imageName: "pencil", title: "Edit Personal Details")
                     }
+                    
+                    Divider()
                     
                     //Sign Out Button
                     Button {
@@ -113,8 +129,9 @@ struct ProfileView: View {
 //                            viewModel.signOut()
 //                        }
                     } label : {
-                        SettingsRowView(imageName: "arrow.left.circle.fill", title: "Sign Out", tintColor: .red)
+                        SettingsRowView(imageName: "arrow.left.circle.fill", title: "Sign Out", iconColor: Color("HighDarkRed"), backgroundColor: Color("HighLightRed"))
                     }
+                    Divider()
                     
                     //Delete Account Button
                     Button {
@@ -122,10 +139,17 @@ struct ProfileView: View {
 //                            viewModel.deactivateAccount()
 //                        }
                     } label : {
-                        SettingsRowView(imageName: "xmark.circle.fill", title: "Delete Account", tintColor: .red)
+                        SettingsRowView(imageName: "xmark.circle.fill", title: "Delete Account", iconColor: Color("HighDarkRed"), backgroundColor: Color("HighLightRed"))
                     }
                 }
+                .padding(.vertical, 10)
+                .padding(.horizontal, 20)
+                .background(.white)
+                .cornerRadius(10)
+                .frame(width: UIScreen.main.bounds.width - 50)
+                .shadow(color: Color.gray.opacity(0.3), radius: 10, x: 0, y: 2)
             }
+            .padding(24)
             
             Spacer()
         }
