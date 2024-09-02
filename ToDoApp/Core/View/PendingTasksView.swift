@@ -64,6 +64,7 @@ struct PendingTasksView: View {
                     .animation(.default)
                 }
             }
+        .padding(.bottom, 70)
     }
     
     private func deleteTask(indexSet: IndexSet) {

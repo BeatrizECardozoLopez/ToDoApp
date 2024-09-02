@@ -17,7 +17,7 @@ struct HomeBoardView: View {
         ZStack {
             RoundedRectangle(cornerRadius: 20.0)
                 .fill(Color("PrimaryColor"))
-                .frame(height: 140)
+                .frame(height: 120)
             
             HStack (spacing: 24) {
                     Text(totalCompletedPercentage < 20 ? "Keep pushing forward!" :
@@ -29,8 +29,8 @@ struct HomeBoardView: View {
                                             )
                         .foregroundColor(.white)
                         .fontWeight(.semibold)
-                        .font(.custom(boldFont, size: 16))
-                        .frame(width: 150, height: 70)
+                        .font(.custom(boldFont, size: 14))
+                        .frame(width: 120, height: 70)
                 Spacer()
                 ZStack {
                     Circle()

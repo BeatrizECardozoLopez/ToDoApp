@@ -20,20 +20,20 @@ struct ProgressCardView: View {
         VStack (alignment: .leading, spacing: 6){
             HStack {
                 Text(category.toString())
-                    .font(.custom(semiBoldFont, size: 14))
+                    .font(.custom(semiBoldFont, size: 12))
                 .foregroundStyle(.secondary)
                 Spacer()
                 Image(systemName: icon)
                     .foregroundStyle(primaryColor)
-                    .font(.system(size: 20))
-                    .padding(.top, 15)
+                    .font(.system(size: 16))
+                    .padding(.bottom, 10)
                     .padding(.horizontal, 12)
             }
             Text(taskTitle)
-                .font(.custom(semiBoldFont, size: 20))
+                .font(.custom(semiBoldFont, size: 18))
                 .kerning(0.5)
                 .foregroundStyle(.primary)
-                .padding(.bottom, 20)
+                .padding(.bottom, 15)
         }
         .padding()
         .background(secondaryColor)

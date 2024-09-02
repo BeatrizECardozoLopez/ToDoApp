@@ -50,15 +50,16 @@ struct TopBar: View {
             //Welcome Text
             VStack(alignment: .leading, spacing: 4){
                 Text("Hello!")
-                    .font(.custom(semiBoldFont, size: 18))
+                    .font(.custom(semiBoldFont, size: 16))
                     .foregroundStyle(.secondary)
                 Text("Jane Doe")
-                    .font(.custom(boldFont, size: 21))
+                    .font(.custom(boldFont, size: 20))
                     .kerning(0.5)
             }
             Spacer()
         }
-        .padding(.horizontal, 32)
+        .padding(.horizontal, 40)
+        .padding(.vertical, 20)
 
     }
 }
@@ -99,7 +100,7 @@ struct NoInProgressTasksView: View {
     var body: some View {
         HStack{
             Text("Stay ahead, no tasks in progress!")
-                .font(.custom(semiBoldFont, size: 12))
+                .font(.custom(semiBoldFont, size: 10))
                 .foregroundStyle(.secondary)
             Spacer()
         }
@@ -135,7 +136,7 @@ struct homeTitle: View {
     var title: String
     var body: some View {
         Text(title)
-            .font(.custom(boldFont, size: 22))
+            .font(.custom(boldFont, size: 20))
             .foregroundStyle(.primary)
     }
 }

@@ -24,17 +24,17 @@ struct TaskGroupTilesView: View {
         HStack{
             Image(systemName: icon)
                 .foregroundStyle(primaryColor)
-                .font(.system(size: 20))
+                .font(.system(size: 18))
                 .padding(.vertical, 15)
                 .padding(.horizontal, 12)
                 .background(secondaryColor)
                 .cornerRadius(10)
             VStack (alignment: .leading, spacing: 6){
                 Text(category)
-                    .font(.custom(semiBoldFont, size: 18))
+                    .font(.custom(semiBoldFont, size: 16))
                 
                 Text(totalTasks)
-                    .font(.custom(boldFont, size: 16))
+                    .font(.custom(boldFont, size: 12))
                     .kerning(0.5)
                     .foregroundStyle(.secondary)
             }
@@ -56,10 +56,10 @@ struct TaskGroupTilesView: View {
         }
         .padding()
         .background(.white)
-        .cornerRadius(20)
+        .cornerRadius(10)
         .frame(width: UIScreen.main.bounds.width - 50)
         .shadow(color: Color.gray.opacity(0.3), radius: 10, x: 0, y: 2)
-        .padding(.vertical, 12)
+        //.padding(.vertical, 12)
     }
 }
 
