@@ -13,7 +13,7 @@ struct ToDoAppApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashScreenView()
         }
         .modelContainer(for: Task.self)
     }
