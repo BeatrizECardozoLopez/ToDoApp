@@ -12,6 +12,7 @@
 		FB291A222C856AAF0016D559 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB291A212C856AAF0016D559 /* SettingsRowView.swift */; };
 		FB5244662C87A599003060D1 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5244652C87A599003060D1 /* SignInView.swift */; };
 		FB5244682C87A5B4003060D1 /* IconTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5244672C87A5B4003060D1 /* IconTextFieldView.swift */; };
+		FB52446A2C87B2DB003060D1 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5244692C87B2DB003060D1 /* SplashScreenView.swift */; };
 		FB80825C2C8003F800BA8D4E /* ToDoAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80825B2C8003F800BA8D4E /* ToDoAppApp.swift */; };
 		FB80825E2C8003F800BA8D4E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80825D2C8003F800BA8D4E /* ContentView.swift */; };
 		FB8082622C8003FB00BA8D4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB8082612C8003FB00BA8D4E /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		FB291A212C856AAF0016D559 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		FB5244652C87A599003060D1 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		FB5244672C87A5B4003060D1 /* IconTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextFieldView.swift; sourceTree = "<group>"; };
+		FB5244692C87B2DB003060D1 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		FB8082582C8003F800BA8D4E /* ToDoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB80825B2C8003F800BA8D4E /* ToDoAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoAppApp.swift; sourceTree = "<group>"; };
 		FB80825D2C8003F800BA8D4E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				FBA424F82C825FA5008C69FD /* ProfileView.swift */,
 				FB0DA2382C84FB1E007BC2C3 /* TaskDetailView.swift */,
 				FB5244652C87A599003060D1 /* SignInView.swift */,
+				FB5244692C87B2DB003060D1 /* SplashScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				FB80828E2C8004DC00BA8D4E /* NewTaskView.swift in Sources */,
 				FB80825E2C8003F800BA8D4E /* ContentView.swift in Sources */,
 				FB5244682C87A5B4003060D1 /* IconTextFieldView.swift in Sources */,
+				FB52446A2C87B2DB003060D1 /* SplashScreenView.swift in Sources */,
 				FB5244662C87A599003060D1 /* SignInView.swift in Sources */,
 				FB8082772C8004B200BA8D4E /* ProgressCardView.swift in Sources */,
 				FB80825C2C8003F800BA8D4E /* ToDoAppApp.swift in Sources */,
