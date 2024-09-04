@@ -12,6 +12,8 @@ struct IconTextFieldView: View {
     @State var title: String
     @State var icon: String
     @Binding var data: String
+    @State var visibleContent: Bool = false
+    var isSecureTextField: Bool
 
     var body: some View {
         HStack (alignment: .center, spacing: 24){
@@ -23,12 +25,38 @@ struct IconTextFieldView: View {
                 Text(title)
                     .font(.custom(boldFont, size: 14))
                     .foregroundStyle(.secondary)
-               
-                TextField("", text: self.$data)
-                    .font(.custom(regularFont, size: 14))
-                    .foregroundStyle(.primary)
-                    .autocapitalization(.none)
+                
+                if isSecureTextField {
+                    HStack (alignment: .top){
+                        if self.visibleContent {
+                            TextField("", text: self.$data)
+                                .font(.custom(regularFont, size: 14))
+                                .foregroundStyle(.primary)
+                                .autocapitalization(.none)
+                        } else {
+                            SecureField("", text: self.$data)
+                                .font(.custom(regularFont, size: 14))
+                                .foregroundStyle(.primary)
+                                .autocapitalization(.none)
+                        }
+                        Image(systemName: self.visibleContent ? "eye.slash" : "eye")
+                            .imageScale(.small)
+                            .foregroundStyle(Color("PrimaryColor"))
+                            .onTapGesture {
+                                withAnimation{
+                                    self.visibleContent.toggle()
+                                }
+                        }
+                    }
+                } else {
+                    TextField("", text: self.$data)
+                        .font(.custom(regularFont, size: 14))
+                        .foregroundStyle(.primary)
+                        .autocapitalization(.none)
+                }
             }
+            
+
         }
         .padding()
         .background(.white)
@@ -40,5 +68,5 @@ struct IconTextFieldView: View {
 }
 
 #Preview {
-    IconTextFieldView(title: "Email Address", icon: "envelope.fill", data: .constant(""))
+    IconTextFieldView(title: "Password", icon: "lock.fill", data: .constant(""), isSecureTextField: true)
 }

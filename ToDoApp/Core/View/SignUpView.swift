@@ -1,16 +1,20 @@
 //
-//  SignInView.swift
+//  SignUpView.swift
 //  ToDoApp
 //
-//  Created by Beatriz Cardozo on 3/9/24.
+//  Created by Beatriz Cardozo on 4/9/24.
 //
 
 import SwiftUI
 
-struct SignInView: View {
+struct SignUpView: View {
     
+    @State private var userFullName: String = ""
     @State private var userEmail: String = ""
     @State private var userPassword: String = ""
+    @State private var userConfirmPassword: String = ""
+    @State private var isPasswordVisible: Bool = false
+    @State private var isConfirmPasswordVisible: Bool = false
     
     var body: some View {
         NavigationStack {
@@ -18,46 +22,41 @@ struct SignInView: View {
                 ZStack (alignment: .topLeading){
                     Ellipse()
                         .frame(width: 500, height: 378)
-                        .padding(.leading, 300)
+                        .padding(.leading, -150)
                         .padding(.top, -250)
                         .foregroundColor(Color("PrimaryColor"))
                         .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 5)
                     Ellipse()
                         .frame(width: 400, height: 278)
-                        .padding(.leading, 350)
+                        .padding(.leading, -100)
                         .padding(.top, -200)
                         .foregroundColor(Color("SecondPrimaryColor"))
                         .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 5)
                     Ellipse()
                         .frame(width: 300, height: 178)
-                        .padding(.leading, 400)
+                        .padding(.leading, -50)
                         .padding(.top, -150)
                         .foregroundColor(Color("ThirdPrimaryColor"))
                         .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 5)
                     
                 }
-                HStack {
-                    VStack (alignment: .leading, spacing: 16){
-                        Text("Login")
+               VStack (alignment: .leading){
+                        Text("Create Your Account")
                             .font(.custom(blackFont, size: 32))
                             .foregroundStyle(.primary)
-                        Text("Please sign in to continue.")
-                            .font(.custom(blackFont, size: 16))
-                            .foregroundStyle(.secondary)
-                    }
-                    Spacer()
                 }
                 VStack {
+                    IconTextFieldView(title: "Full Name", icon: "person.fill", data: self.$userFullName, isSecureTextField: false)
                     IconTextFieldView(title: "Email", icon: "envelope.fill", data: self.$userEmail, isSecureTextField: false)
-                    
-                    IconTextFieldView(title: "Password", icon: "lock.fill", data: self.$userPassword, isSecureTextField: true)
+                    IconTextFieldView(title: "Password", icon: "lock.fill", data: self.$userPassword, visibleContent: self.isPasswordVisible, isSecureTextField: true)
+                    IconTextFieldView(title: "Confirm Password", icon: "lock.fill", data: self.$userConfirmPassword, visibleContent: self.isConfirmPasswordVisible,isSecureTextField: true)
                 }
                 HStack {
                     Spacer()
                     Button{
                         //TODO: Create account
                     } label: {
-                        Text("Sign In")
+                        Text("Sign Up")
                             .font(.custom(boldFont, size: 16))
                             .foregroundStyle(.primary)
                     }
@@ -69,10 +68,10 @@ struct SignInView: View {
                 }
                 HStack {
                     Spacer()
-                    Text("Not registered yet?")
+                    Text("Already have an account?")
                         .font(.custom(boldFont, size: 14))
                         .foregroundStyle(.secondary)
-                    Text("Create an account")
+                    Text("Sign In")
                         .font(.custom(blackFont, size: 14))
                         .foregroundStyle(Color("PrimaryColor"))
                         .underline()
@@ -107,5 +106,5 @@ struct SignInView: View {
 }
 
 #Preview {
-    SignInView()
+    SignUpView()
 }
