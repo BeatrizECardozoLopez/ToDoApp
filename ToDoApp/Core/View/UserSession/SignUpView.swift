@@ -16,6 +16,8 @@ struct SignUpView: View {
     @State private var isPasswordVisible: Bool = false
     @State private var isConfirmPasswordVisible: Bool = false
     
+    @Environment(\.dismiss) var dismiss
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -75,6 +77,9 @@ struct SignUpView: View {
                         .font(.custom(blackFont, size: 14))
                         .foregroundStyle(Color("PrimaryColor"))
                         .underline()
+                        .onTapGesture {
+                            dismiss()
+                        }
                     
                 }
                 .padding(.vertical, 16)

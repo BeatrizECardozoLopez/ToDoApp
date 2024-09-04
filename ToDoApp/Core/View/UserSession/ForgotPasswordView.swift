@@ -1,13 +1,13 @@
 //
-//  SignInView.swift
+//  ForgotPasswordView.swift
 //  ToDoApp
 //
-//  Created by Beatriz Cardozo on 3/9/24.
+//  Created by Beatriz Cardozo on 4/9/24.
 //
 
 import SwiftUI
 
-struct SignInView: View {
+struct ForgotPasswordView: View {
     
     @State private var userEmail: String = ""
     @State private var userPassword: String = ""
@@ -38,26 +38,23 @@ struct SignInView: View {
                 }
                 HStack {
                     VStack (alignment: .leading, spacing: 16){
-                        Text("Login")
+                        Text("Reset Password")
                             .font(.custom(blackFont, size: 32))
                             .foregroundStyle(.primary)
-                        Text("Please sign in to continue.")
+                        Text("Please enter the email associated with your account")
                             .font(.custom(blackFont, size: 16))
                             .foregroundStyle(.secondary)
                     }
                     Spacer()
                 }
-                VStack {
-                    IconTextFieldView(title: "Email", icon: "envelope.fill", data: self.$userEmail, isSecureTextField: false)
-                    
-                    IconTextFieldView(title: "Password", icon: "lock.fill", data: self.$userPassword, isSecureTextField: true)
-                }
+                IconTextFieldView(title: "Email", icon: "envelope.fill", data: self.$userEmail, isSecureTextField: false)
+
                 HStack {
                     Spacer()
                     Button{
-                        //TODO: Create account
+                        //TODO: Reset password
                     } label: {
-                        Text("Sign In")
+                        Text("Send")
                             .font(.custom(boldFont, size: 16))
                             .foregroundStyle(.primary)
                     }
@@ -67,18 +64,7 @@ struct SignInView: View {
                     .background(Color("PrimaryColor"))
                     .cornerRadius(15)
                 }
-                HStack {
-                    Spacer()
-                    Text("Not registered yet?")
-                        .font(.custom(boldFont, size: 14))
-                        .foregroundStyle(.secondary)
-                    Text("Create an account")
-                        .font(.custom(blackFont, size: 14))
-                        .foregroundStyle(Color("PrimaryColor"))
-                        .underline()
-                    
-                }
-                .padding(.vertical, 16)
+ 
                 Spacer()
                 ZStack (alignment: .bottomLeading){
                     Ellipse()
@@ -107,5 +93,5 @@ struct SignInView: View {
 }
 
 #Preview {
-    SignInView()
+    ForgotPasswordView()
 }

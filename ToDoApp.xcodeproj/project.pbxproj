@@ -32,7 +32,6 @@
 		FB80828E2C8004DC00BA8D4E /* NewTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80828A2C8004DC00BA8D4E /* NewTaskView.swift */; };
 		FB80828F2C8004DC00BA8D4E /* PendingTasksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80828B2C8004DC00BA8D4E /* PendingTasksView.swift */; };
 		FB8082902C8004DC00BA8D4E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80828C2C8004DC00BA8D4E /* HomeView.swift */; };
-		FB8082912C8004DC00BA8D4E /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB80828D2C8004DC00BA8D4E /* StartView.swift */; };
 		FB8082942C800F1400BA8D4E /* PendingTaskTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8082932C800F1400BA8D4E /* PendingTaskTileView.swift */; };
 		FB8082962C80298100BA8D4E /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8082952C80298100BA8D4E /* TextFieldView.swift */; };
 		FBA424F52C81BE99008C69FD /* CustomizedDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA424F42C81BE99008C69FD /* CustomizedDatePickerView.swift */; };
@@ -40,6 +39,7 @@
 		FBA424F92C825FA5008C69FD /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBA424F82C825FA5008C69FD /* ProfileView.swift */; };
 		FBC45C992C80DF0B008E8C8E /* PriorityPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC45C982C80DF0B008E8C8E /* PriorityPickerView.swift */; };
 		FBE7533D2C88B605000FEFA0 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE7533C2C88B605000FEFA0 /* SignUpView.swift */; };
+		FBE753412C88C147000FEFA0 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE753402C88C147000FEFA0 /* ForgotPasswordView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,7 +69,6 @@
 		FB80828A2C8004DC00BA8D4E /* NewTaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewTaskView.swift; sourceTree = "<group>"; };
 		FB80828B2C8004DC00BA8D4E /* PendingTasksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PendingTasksView.swift; sourceTree = "<group>"; };
 		FB80828C2C8004DC00BA8D4E /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		FB80828D2C8004DC00BA8D4E /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		FB8082922C8004EB00BA8D4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FB8082932C800F1400BA8D4E /* PendingTaskTileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingTaskTileView.swift; sourceTree = "<group>"; };
 		FB8082952C80298100BA8D4E /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
@@ -78,6 +77,7 @@
 		FBA424F82C825FA5008C69FD /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		FBC45C982C80DF0B008E8C8E /* PriorityPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityPickerView.swift; sourceTree = "<group>"; };
 		FBE7533C2C88B605000FEFA0 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		FBE753402C88C147000FEFA0 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,15 +176,14 @@
 		FB80826F2C80046900BA8D4E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FBE7533F2C88C127000FEFA0 /* New Group */,
+				FBE7533E2C88C0FA000FEFA0 /* UserSession */,
 				FB80828A2C8004DC00BA8D4E /* NewTaskView.swift */,
 				FB80828C2C8004DC00BA8D4E /* HomeView.swift */,
-				FB80828D2C8004DC00BA8D4E /* StartView.swift */,
 				FB80828B2C8004DC00BA8D4E /* PendingTasksView.swift */,
 				FBA424F82C825FA5008C69FD /* ProfileView.swift */,
 				FB0DA2382C84FB1E007BC2C3 /* TaskDetailView.swift */,
-				FB5244652C87A599003060D1 /* SignInView.swift */,
 				FB5244692C87B2DB003060D1 /* SplashScreenView.swift */,
-				FBE7533C2C88B605000FEFA0 /* SignUpView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -210,6 +209,23 @@
 				FB8082802C8004BF00BA8D4E /* Mulish-SemiBold.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		FBE7533E2C88C0FA000FEFA0 /* UserSession */ = {
+			isa = PBXGroup;
+			children = (
+				FBE7533C2C88B605000FEFA0 /* SignUpView.swift */,
+				FB5244652C87A599003060D1 /* SignInView.swift */,
+				FBE753402C88C147000FEFA0 /* ForgotPasswordView.swift */,
+			);
+			path = UserSession;
+			sourceTree = "<group>";
+		};
+		FBE7533F2C88C127000FEFA0 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,7 +307,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB8082722C80048800BA8D4E /* Task.swift in Sources */,
-				FB8082912C8004DC00BA8D4E /* StartView.swift in Sources */,
 				FB8082962C80298100BA8D4E /* TextFieldView.swift in Sources */,
 				FB8082942C800F1400BA8D4E /* PendingTaskTileView.swift in Sources */,
 				FB8082762C8004B200BA8D4E /* TaskGroupTilesView.swift in Sources */,
@@ -304,6 +319,7 @@
 				FBA424F52C81BE99008C69FD /* CustomizedDatePickerView.swift in Sources */,
 				FBC45C992C80DF0B008E8C8E /* PriorityPickerView.swift in Sources */,
 				FB80828E2C8004DC00BA8D4E /* NewTaskView.swift in Sources */,
+				FBE753412C88C147000FEFA0 /* ForgotPasswordView.swift in Sources */,
 				FB80825E2C8003F800BA8D4E /* ContentView.swift in Sources */,
 				FB5244682C87A5B4003060D1 /* IconTextFieldView.swift in Sources */,
 				FB52446A2C87B2DB003060D1 /* SplashScreenView.swift in Sources */,
